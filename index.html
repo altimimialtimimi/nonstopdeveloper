@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rafidain Rail — easy train travel across Iraq." />
+  <title>Rafidain Rail — Travel Iraq by train</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Rafidain Rail home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><b>Rafidain</b><small>RAIL</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#book">Book a trip</a><a href="#discover">Explore Iraq</a><a href="#help">Travel info</a>
+    </nav>
+    <div class="header-actions">
+      <button class="language" id="langButton" type="button">العربية</button>
+      <button class="account" type="button" aria-label="My account"><span class="user-icon">♙</span><span>My trips</span></button>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="book">
+      <div class="sun-disc"></div><div class="palm palm-one">♧</div><div class="palm palm-two">♧</div>
+      <div class="hero-copy">
+        <p class="eyebrow">THE JOURNEY STARTS HERE</p>
+        <h1>Across Iraq,<br><em>together.</em></h1>
+        <p class="hero-sub">Simple, comfortable train travel between the cities you love.</p>
+      </div>
+      <div class="train-art" aria-hidden="true">
+        <div class="train-window"></div><div class="train-window"></div><div class="train-window"></div>
+        <div class="train-door"></div><div class="train-nose"></div>
+      </div>
+      <div class="rails" aria-hidden="true"><span></span><span></span><span></span></div>
+      <form class="booking-card" id="bookingForm">
+        <div class="trip-toggle" role="group" aria-label="Trip type">
+          <button class="active" type="button" data-trip="return">Return</button>
+          <button type="button" data-trip="oneway">One way</button>
+        </div>
+        <div class="booking-grid">
+          <label class="field location-field"><span>From</span><div><b class="pin">●</b><input id="from" list="stations" value="Baghdad Central" autocomplete="off" required></div></label>
+          <button class="swap" id="swapButton" type="button" aria-label="Swap origin and destination">⇄</button>
+          <label class="field location-field"><span>To</span><div><b class="pin hollow">●</b><input id="to" list="stations" value="Basra" autocomplete="off" required></div></label>
+          <label class="field"><span>Departure</span><div><b>◫</b><input id="departure" type="date" required></div></label>
+          <label class="field return-field"><span>Return</span><div><b>◫</b><input id="returnDate" type="date"></div></label>
+          <button class="travellers" id="travellerButton" type="button"><span>Travellers</span><b><i>♙</i> <span id="travellerCount">1 adult</span></b></button>
+          <button class="search-button" type="submit">Search trains <span>→</span></button>
+        </div>
+        <datalist id="stations"><option>Baghdad Central</option><option>Basra</option><option>Fallujah</option><option>Ramadi</option><option>Samawah</option><option>Nasiriyah</option><option>Hillah</option><option>Karbala</option><option>Mosul</option></datalist>
+        <div class="traveller-popover" id="travellerPopover">
+          <div><span><b>Adults</b><small>Age 16+</small></span><span><button type="button" data-action="minus">−</button><strong id="adultNumber">1</strong><button type="button" data-action="plus">+</button></span></div>
+          <button class="done-button" id="doneTravellers" type="button">Done</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="quick-links" aria-label="Quick links">
+      <a href="#status"><span>◷</span><div><b>Train status</b><small>Live updates for your journey</small></div><i>→</i></a>
+      <a href="#tickets"><span>▣</span><div><b>Manage your ticket</b><small>Change or cancel a booking</small></div><i>→</i></a>
+      <a href="#help"><span>?</span><div><b>Need help?</b><small>Answers before you travel</small></div><i>→</i></a>
+    </section>
+
+    <section class="destinations" id="discover">
+      <div class="section-heading"><div><p class="eyebrow">GO SOMEWHERE NEW</p><h2>Iraq is closer<br>than you think.</h2></div><p>Ancient cities, generous tables and unforgettable landscapes. Take the easy way there.</p></div>
+      <div class="destination-grid">
+        <article class="destination-card baghdad"><div class="card-art"><span class="monument"></span><span class="river"></span></div><div class="card-copy"><small>CAPITAL STORIES</small><h3>Baghdad</h3><p>Books, boulevards and the Tigris at sunset.</p><a href="#book">Plan your trip <span>→</span></a></div></article>
+        <article class="destination-card basra"><div class="card-art"><span class="palm-shape p1"></span><span class="palm-shape p2"></span><span class="water"></span></div><div class="card-copy"><small>SOUTHERN WARMTH</small><h3>Basra</h3><p>Canals, date palms and life by the Shatt al-Arab.</p><a href="#book">Plan your trip <span>→</span></a></div></article>
+        <article class="destination-card samarra"><div class="card-art"><span class="spiral"></span><span class="cloud c1"></span><span class="cloud c2"></span></div><div class="card-copy"><small>ANCIENT HORIZONS</small><h3>Samarra</h3><p>A timeless skyline and stories carved in brick.</p><a href="#book">Plan your trip <span>→</span></a></div></article>
+      </div>
+    </section>
+
+    <section class="promise" id="help">
+      <div><p class="eyebrow">A BETTER WAY TO MOVE</p><h2>Travel with room<br>to <em>breathe.</em></h2></div>
+      <div class="promise-list"><div><span>01</span><p><b>City centre to city centre</b><small>Skip the airport queues and arrive in the heart of town.</small></p></div><div><span>02</span><p><b>Comfort for every journey</b><small>Generous seats, cool cabins and space for your bags.</small></p></div><div><span>03</span><p><b>A lighter way forward</b><small>Shared journeys built for a more connected Iraq.</small></p></div></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark"><i></i><i></i><i></i></span><span><b>Rafidain</b><small>RAIL</small></span></a><p>Connecting Iraq, one journey at a time.</p><p>© 2026 Rafidain Rail</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
